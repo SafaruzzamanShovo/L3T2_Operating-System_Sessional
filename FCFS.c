@@ -1,0 +1,48 @@
+#include<stdio.h>
+int n, bt[20], wt[20], TNT[20], pid[20];
+
+void waiting_time(){
+    wt[0] = 0;
+    for(int i = 1; i < n; i++){
+        wt[i] = wt[i-1] + bt[i-1];
+    }
+
+}
+
+void turnaround_time(){
+
+    for(int i = 0; i < n; i++){
+        TNT[i] = wt[i] + bt[i];
+    }
+
+}
+int main(){
+
+    printf("Enter the number of Processes: ");
+    scanf("%d", &n);
+
+    for(int i = 0; i < n; i++){
+        pid[i] = i;
+        printf("Enter the Burst Time for Process %d:",pid[i]);
+        scanf("%d",&bt[i]);
+    }
+    waiting_time();
+    turnaround_time();
+    printf("\nProcess  \t Burst Time \t Waiting Time \t Turnaround Time\n");
+    for(int i = 0; i < n; i++){
+        printf("P%d \t\t %d \t\t %d \t\t %d\n",pid[i],bt[i],wt[i],TNT[i]);
+    }
+
+    int wt_sum = 0;
+    int tnt_sum = 0;
+    for(int i = 0; i < n; i++){
+        wt_sum += wt[i];
+        tnt_sum += TNT[i];
+    }
+
+    printf("Average Waiting Time : %.04lf \n", (wt_sum/n)*1.0);
+    printf("Average Turnaround Time : %.04lf \n", (tnt_sum/n)*1.0);
+
+
+
+}
