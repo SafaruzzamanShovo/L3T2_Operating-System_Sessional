@@ -1,48 +1,26 @@
-# Operating System Sessional
+# Operating Systems Course Assignments
 
-This repository contains implementations of various Operating System concepts and scheduling algorithms using the C programming language on a Linux platform. The experiments include CPU scheduling algorithms, process synchronization problems, and resource allocation techniques.
+## 1. Bash Scripting
+- [Code](/Bash-Scripting-Offline-01/)
 
-## List of Experiments
+## 2. xv6 System Call 
+- Implementing and adding two custom system call interfaces to xv6
+    - [Problem Statement](/xv6-System-Call-Offline-02/Offline2.pdf)
+    - [Solution Patch](/xv6-System-Call-Offline-02/1805112.patch)
+    - [Notes](/xv6-System-Call-Offline-02/Note.md)
 
-### CPU Scheduling Algorithms
-1. **First-Come, First-Served (FCFS) Scheduling**
-2. **Shortest-Job-First (SJF) Scheduling**
-3. **Priority Scheduling**
-4. **Round Robin (RR) Scheduling**
+## 3. xv6 Lottery Scheduler
+- Implementing lottery scheduling algorithms with randomly generated ticket assignment to xv6
+    - [Problem Statement and Reproducing](/xv6-Lottery-Scheduler-Offline-03/Steps.md)
+    - [Solution Patch](/xv6-Lottery-Scheduler-Offline-03/1805112.patch)
 
-### Process Synchronization Problems
-5. **Producer-Consumer Problem** - Implements inter-process communication using shared memory and synchronization mechanisms.
-6. **Bounded-Buffer Problem** - Solves the problem of limited buffer space in producer-consumer communication.
-7. **Readers-Writers Problem** - Implements a synchronization solution where multiple readers can read simultaneously, but a writer must have exclusive access.
-8. **Dining Philosophers Problem** - Demonstrates deadlock and starvation scenarios in concurrent programming.
-9. **Sleeping Barber Problem** - Models synchronization in a system with multiple waiting processes.
+## 4. Pthread Synchronization
+- Implementing classic synchronization problem solutions using pthread and semaphore
+    - [Barber-shop](/Pthread-Synchronization-Offline-04/barber-shop/)
+    - [Master-worker](/Pthread-Synchronization-Offline-04/master-worker/)
+    - [Read-Write Lock](/Pthread-Synchronization-Offline-04/rwlock/)
+    - [Zemaphore](/Pthread-Synchronization-Offline-04/zemaphore/)
 
-### Resource Allocation & Deadlock Handling
-10. **Resource-Allocation Graph Algorithm** - Implements resource allocation and deadlock detection using a graph-based approach.
-11. **Banker’s Algorithm** - Implements a deadlock avoidance algorithm using a safe sequence of resource allocation.
-
-## Prerequisites
-- Linux Operating System
-- GCC Compiler
-- Basic knowledge of C programming and Operating System concepts
-
-## How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/os-experiments.git
-   cd os-experiments
-   ```
-2. Compile the programs:
-   ```bash
-   gcc filename.c -o outputfile -pthread
-   ```
-3. Run the executable:
-   ```bash
-   ./outputfile
-   ```
-
-## Contributing
-Feel free to contribute by adding improvements or fixing bugs. Fork the repository, make your changes, and submit a pull request.
-
-## License
-This project is open-source and available under the MIT License.
+## 5. xv6 Copy-On-Write Memory Management
+- Implementing copy-on-write fork to allocate and copy physical memory pages within xv6
+    - [Code](/xv6-Copy-On-Write-Memory-Offline-05/)
